@@ -1,0 +1,27 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    groovydocGroovyClasspath
+}
+
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy:3.0.7'
+    // comment out the line above and uncomment the line below to see the :groovydoc task pass
+    // implementation 'org.codehaus.groovy:groovy:2.5.14'
+
+    groovydocGroovyClasspath 'org.codehaus.groovy:groovy-ant:3.0.7'
+    groovydocGroovyClasspath 'org.codehaus.groovy:groovy-templates:3.0.7'
+}
+
+groovydoc {
+    // uncomment the line below to see the :groovydoc task pass
+    //groovyClasspath = configurations.groovydocGroovyClasspath
+}
+
